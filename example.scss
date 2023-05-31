@@ -7,7 +7,11 @@ $success-background: green;
 $warning-background: orange;
 $error-background: red;
 $border-color: #8c8c8c;
-$shadow: 10px 10px 15px -4px $text-color;
+@mixin shadow-box {
+  -webkit-box-shadow: 10px 10px 15px -4px $text-color;
+  -moz-box-shadow: 10px 10px 15px -4px $text-color;
+  box-shadow: 10px 10px 15px -4px $text-color;
+}
 
 body {
   font: 100% "Space Mono", monospace;
@@ -30,14 +34,12 @@ article {
     flex-grow: 1;
     flex-basis: 45%;
     border: 1px $border-color solid;
-    -webkit-box-shadow: $shadow;
-    -moz-box-shadow: $shadow;
-    box-shadow: $shadow;
     padding: 16px;
     margin: 16px;
     clear: both;
     overflow: auto;
     box-sizing: border-box;
+    @include shadow-box;
 
     &selling-points {
       flex-grow: 2;
@@ -106,6 +108,10 @@ h3 {
   .error {
     @extend.message-box;
     background-color: $error-background;
+  }
+
+  .error:hover {
+    background-color: $success-background;
   }
 
   .warning {

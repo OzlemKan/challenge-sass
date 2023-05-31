@@ -20,14 +20,14 @@ article section {
   flex-grow: 1;
   flex-basis: 45%;
   border: 1px #8c8c8c solid;
-  -webkit-box-shadow: 10px 10px 15px -4px #6b717f;
-  -moz-box-shadow: 10px 10px 15px -4px #6b717f;
-  box-shadow: 10px 10px 15px -4px #6b717f;
   padding: 16px;
   margin: 16px;
   clear: both;
   overflow: auto;
   box-sizing: border-box;
+  -webkit-box-shadow: 10px 10px 15px -4px #6b717f;
+  -moz-box-shadow: 10px 10px 15px -4px #6b717f;
+  box-shadow: 10px 10px 15px -4px #6b717f;
 }
 article sectionselling-points {
   flex-grow: 2;
@@ -87,6 +87,9 @@ h3 {
 }
 .messages .error {
   background-color: red;
+}
+.messages .error:hover {
+  background-color: green;
 }
 .messages .warning {
   background-color: orange;
