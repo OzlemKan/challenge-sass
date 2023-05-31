@@ -1,3 +1,4 @@
+/*variables*/
 body {
   font: 100% "Space Mono", monospace;
   color: #6b717f;
@@ -76,24 +77,18 @@ h3 {
 .messages {
   padding: 16px;
 }
-
-.success,
-.error,
-.warning {
+.messages .message-box, .messages .warning, .messages .error, .messages .success {
   border: 1px solid #8c8c8c;
   padding: 16px;
   color: #fff;
 }
-
-.success {
+.messages .success {
   background-color: green;
 }
-
-.error {
+.messages .error {
   background-color: red;
 }
-
-.warning {
+.messages .warning {
   background-color: orange;
 }
 

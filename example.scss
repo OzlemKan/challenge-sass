@@ -1,9 +1,20 @@
+/*variables*/
+
+$text-color: #6b717f;
+$white: #fff;
+$code-background: #000;
+$success-background: green;
+$warning-background: orange;
+$error-background: red;
+$border-color: #8c8c8c;
+$shadow: 10px 10px 15px -4px $text-color;
+
 body {
   font: 100% "Space Mono", monospace;
-  color: #6b717f;
+  color: $text-color;
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  background-color: $white;
   overflow-x: hidden;
 }
 
@@ -18,10 +29,10 @@ article {
   section {
     flex-grow: 1;
     flex-basis: 45%;
-    border: 1px #8c8c8c solid;
-    -webkit-box-shadow: 10px 10px 15px -4px #6b717f;
-    -moz-box-shadow: 10px 10px 15px -4px #6b717f;
-    box-shadow: 10px 10px 15px -4px #6b717f;
+    border: 1px $border-color solid;
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    box-shadow: $shadow;
     padding: 16px;
     margin: 16px;
     clear: both;
@@ -35,9 +46,9 @@ article {
   }
 
   code {
-    background: #000;
-    border: 1px solid #6b717f;
-    color: #8c8c8c;
+    background: $code-background;
+    border: 1px solid $text-color;
+    color: $border-color;
     page-break-inside: avoid;
     font-family: monospace;
     font-size: 15px;
@@ -80,24 +91,25 @@ h3 {
 
 .messages {
   padding: 16px;
-}
 
-.success,
-.error,
-.warning {
-  border: 1px solid #8c8c8c;
-  padding: 16px;
-  color: #fff;
-}
+  .message-box {
+    border: 1px solid $border-color;
+    padding: 16px;
+    color: $white;
+  }
 
-.success {
-  background-color: green;
-}
+  .success {
+    @extend .message-box;
+    background-color: $success-background;
+  }
 
-.error {
-  background-color: red;
-}
+  .error {
+    @extend.message-box;
+    background-color: $error-background;
+  }
 
-.warning {
-  background-color: orange;
+  .warning {
+    @extend.message-box;
+    background-color: $warning-background;
+  }
 }
